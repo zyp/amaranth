@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; Amaranth HDL toolchain 0.4.dev265 documentation</title>
+  <title>Index &mdash; Amaranth language &amp; toolchain 0.4.1.dev117 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/platformpicker.css" type="text/css" />
@@ -14,7 +14,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=56a01270"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=09d59d1e"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="_static/platformpicker.js"></script>
@@ -32,10 +32,11 @@
           
           
           <a href="cover.html" class="icon icon-home">
-            Amaranth HDL toolchain
+            Amaranth language & toolchain
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.4.dev265+g7da0601.editable
+                0.4.1.dev117+g5bef5c4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -47,7 +48,8 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Language &amp; toolchain</a></li>
-<li class="toctree-l1"><a class="reference external" href="https://amaranth-lang.org/docs/amaranth-boards/latest/">Board definitions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://amaranth-lang.org/docs/amaranth-stdio/latest/">Standard I/O components</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://amaranth-lang.org/docs/amaranth-soc/latest/">System on Chip toolkit</a></li>
 </ul>
 
         </div>
@@ -56,7 +58,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="cover.html">Amaranth HDL toolchain</a>
+          <a href="cover.html">Amaranth language & toolchain</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -79,6 +81,7 @@
 <div class="genindex-jumpbox">
  <a href="#_"><strong>_</strong></a>
  | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
  | <a href="#E"><strong>E</strong></a>
@@ -87,6 +90,7 @@
  | <a href="#I"><strong>I</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
+ | <a href="#O"><strong>O</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#Q"><strong>Q</strong></a>
  | <a href="#R"><strong>R</strong></a>
@@ -100,50 +104,186 @@
 <h2 id="_">_</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="stdlib/enum.html#amaranth.lib.enum.FlagView.__and__">__and__() (amaranth.lib.enum.FlagView method)</a>
+      <li><a href="reference.html#amaranth.hdl.Value.__abs__">__abs__() (amaranth.hdl.Value method)</a>
 </li>
-      <li><a href="stdlib/crc.html#amaranth.lib.crc.Algorithm.__call__">__call__() (amaranth.lib.crc.Algorithm method)</a>
+      <li><a href="reference.html#amaranth.hdl.Value.__add__">__add__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__and__">__and__() (amaranth.hdl.Value method)</a>
 
       <ul>
+        <li><a href="stdlib/enum.html#amaranth.lib.enum.FlagView.__and__">(amaranth.lib.enum.FlagView method)</a>
+</li>
+      </ul></li>
+      <li><a href="reference.html#amaranth.hdl.Value.__bool__">__bool__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.ShapeCastable.__call__">__call__() (amaranth.hdl.ShapeCastable method)</a>
+
+      <ul>
+        <li><a href="stdlib/crc.html#amaranth.lib.crc.Algorithm.__call__">(amaranth.lib.crc.Algorithm method)</a>
+</li>
         <li><a href="stdlib/data.html#amaranth.lib.data.Layout.__call__">(amaranth.lib.data.Layout method)</a>
 </li>
         <li><a href="stdlib/enum.html#amaranth.lib.enum.EnumMeta.__call__">(amaranth.lib.enum.EnumMeta method)</a>
 </li>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Flow.__call__">(amaranth.lib.wiring.Flow method)</a>
+</li>
       </ul></li>
-      <li><a href="stdlib/data.html#amaranth.lib.data.Field.__eq__">__eq__() (amaranth.lib.data.Field method)</a>
+      <li><a href="reference.html#amaranth.hdl.Value.__contains__">__contains__() (amaranth.hdl.Value method)</a>
 
       <ul>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.SignatureMembers.__contains__">(amaranth.lib.wiring.SignatureMembers method)</a>
+</li>
+      </ul></li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.FlippedInterface.__delattr__">__delattr__() (amaranth.lib.wiring.FlippedInterface method)</a>
+
+      <ul>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.FlippedSignature.__delattr__">(amaranth.lib.wiring.FlippedSignature method)</a>
+</li>
+      </ul></li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.SignatureMembers.__delitem__">__delitem__() (amaranth.lib.wiring.SignatureMembers method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__eq__">__eq__() (amaranth.hdl.Value method)</a>
+
+      <ul>
+        <li><a href="stdlib/data.html#amaranth.lib.data.Field.__eq__">(amaranth.lib.data.Field method)</a>
+</li>
         <li><a href="stdlib/data.html#amaranth.lib.data.Layout.__eq__">(amaranth.lib.data.Layout method)</a>
 </li>
         <li><a href="stdlib/enum.html#amaranth.lib.enum.EnumView.__eq__">(amaranth.lib.enum.EnumView method)</a>
 </li>
-      </ul></li>
-      <li><a href="stdlib/data.html#amaranth.lib.data.View.__getattr__">__getattr__() (amaranth.lib.data.View method)</a>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.FlippedInterface.__eq__">(amaranth.lib.wiring.FlippedInterface method)</a>
 </li>
-      <li><a href="stdlib/data.html#amaranth.lib.data.Layout.__getitem__">__getitem__() (amaranth.lib.data.Layout method)</a>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Signature.__eq__">(amaranth.lib.wiring.Signature method)</a>
+</li>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.SignatureMembers.__eq__">(amaranth.lib.wiring.SignatureMembers method)</a>
+</li>
+      </ul></li>
+      <li><a href="reference.html#amaranth.hdl.Value.__floordiv__">__floordiv__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__ge__">__ge__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="stdlib/data.html#amaranth.lib.data.View.__getattr__">__getattr__() (amaranth.lib.data.View method)</a>
 
       <ul>
-        <li><a href="stdlib/data.html#amaranth.lib.data.View.__getitem__">(amaranth.lib.data.View method)</a>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.FlippedInterface.__getattr__">(amaranth.lib.wiring.FlippedInterface method)</a>
+</li>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.FlippedSignature.__getattr__">(amaranth.lib.wiring.FlippedSignature method)</a>
 </li>
       </ul></li>
+      <li><a href="reference.html#amaranth.hdl.Value.__getitem__">__getitem__() (amaranth.hdl.Value method)</a>
+
+      <ul>
+        <li><a href="stdlib/data.html#amaranth.lib.data.Layout.__getitem__">(amaranth.lib.data.Layout method)</a>
+</li>
+        <li><a href="stdlib/data.html#amaranth.lib.data.View.__getitem__">(amaranth.lib.data.View method)</a>
+</li>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.SignatureMembers.__getitem__">(amaranth.lib.wiring.SignatureMembers method)</a>
+</li>
+      </ul></li>
+      <li><a href="reference.html#amaranth.hdl.Value.__gt__">__gt__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__hash__">__hash__ (amaranth.hdl.Value attribute)</a>
+</li>
+      <li><a href="stdlib/enum.html#amaranth.lib.enum.EnumView.__init__">__init__() (amaranth.lib.enum.EnumView method)</a>
+
+      <ul>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.PureInterface.__init__">(amaranth.lib.wiring.PureInterface method)</a>
+</li>
+      </ul></li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.SignatureMeta.__instancecheck__">__instancecheck__() (amaranth.lib.wiring.SignatureMeta method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="stdlib/enum.html#amaranth.lib.enum.EnumView.__init__">__init__() (amaranth.lib.enum.EnumView method)</a>
+      <li><a href="reference.html#amaranth.hdl.Value.__invert__">__invert__() (amaranth.hdl.Value method)</a>
+
+      <ul>
+        <li><a href="stdlib/enum.html#amaranth.lib.enum.FlagView.__invert__">(amaranth.lib.enum.FlagView method)</a>
 </li>
-      <li><a href="stdlib/enum.html#amaranth.lib.enum.FlagView.__invert__">__invert__() (amaranth.lib.enum.FlagView method)</a>
-</li>
+      </ul></li>
       <li><a href="stdlib/data.html#amaranth.lib.data.Layout.__iter__">__iter__() (amaranth.lib.data.Layout method)</a>
+
+      <ul>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.SignatureMembers.__iter__">(amaranth.lib.wiring.SignatureMembers method)</a>
 </li>
-      <li><a href="stdlib/enum.html#amaranth.lib.enum.FlagView.__or__">__or__() (amaranth.lib.enum.FlagView method)</a>
+      </ul></li>
+      <li><a href="reference.html#amaranth.hdl.Value.__le__">__le__() (amaranth.hdl.Value method)</a>
 </li>
-      <li><a href="stdlib/enum.html#amaranth.lib.enum.FlagView.__rand__">__rand__() (amaranth.lib.enum.FlagView method)</a>
+      <li><a href="reference.html#amaranth.hdl.Value.__len__">__len__() (amaranth.hdl.Value method)</a>
 </li>
-      <li><a href="stdlib/enum.html#amaranth.lib.enum.FlagView.__ror__">__ror__() (amaranth.lib.enum.FlagView method)</a>
+      <li><a href="reference.html#amaranth.hdl.Value.__lshift__">__lshift__() (amaranth.hdl.Value method)</a>
 </li>
-      <li><a href="stdlib/enum.html#amaranth.lib.enum.FlagView.__rxor__">__rxor__() (amaranth.lib.enum.FlagView method)</a>
+      <li><a href="reference.html#amaranth.hdl.Value.__lt__">__lt__() (amaranth.hdl.Value method)</a>
 </li>
-      <li><a href="stdlib/enum.html#amaranth.lib.enum.FlagView.__xor__">__xor__() (amaranth.lib.enum.FlagView method)</a>
+      <li><a href="reference.html#amaranth.hdl.Value.__mod__">__mod__() (amaranth.hdl.Value method)</a>
 </li>
+      <li><a href="reference.html#amaranth.hdl.Value.__mul__">__mul__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__ne__">__ne__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__neg__">__neg__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__or__">__or__() (amaranth.hdl.Value method)</a>
+
+      <ul>
+        <li><a href="stdlib/enum.html#amaranth.lib.enum.FlagView.__or__">(amaranth.lib.enum.FlagView method)</a>
+</li>
+      </ul></li>
+      <li><a href="reference.html#amaranth.hdl.Value.__pos__">__pos__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__radd__">__radd__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__rand__">__rand__() (amaranth.hdl.Value method)</a>
+
+      <ul>
+        <li><a href="stdlib/enum.html#amaranth.lib.enum.FlagView.__rand__">(amaranth.lib.enum.FlagView method)</a>
+</li>
+      </ul></li>
+      <li><a href="reference.html#amaranth.hdl.Shape.__repr__">__repr__() (amaranth.hdl.Shape method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__rfloordiv__">__rfloordiv__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__rlshift__">__rlshift__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__rmod__">__rmod__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__rmul__">__rmul__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__ror__">__ror__() (amaranth.hdl.Value method)</a>
+
+      <ul>
+        <li><a href="stdlib/enum.html#amaranth.lib.enum.FlagView.__ror__">(amaranth.lib.enum.FlagView method)</a>
+</li>
+      </ul></li>
+      <li><a href="reference.html#amaranth.hdl.Value.__rrshift__">__rrshift__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__rshift__">__rshift__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__rsub__">__rsub__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__rxor__">__rxor__() (amaranth.hdl.Value method)</a>
+
+      <ul>
+        <li><a href="stdlib/enum.html#amaranth.lib.enum.FlagView.__rxor__">(amaranth.lib.enum.FlagView method)</a>
+</li>
+      </ul></li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.FlippedInterface.__setattr__">__setattr__() (amaranth.lib.wiring.FlippedInterface method)</a>
+
+      <ul>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.FlippedSignature.__setattr__">(amaranth.lib.wiring.FlippedSignature method)</a>
+</li>
+      </ul></li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.SignatureMembers.__setitem__">__setitem__() (amaranth.lib.wiring.SignatureMembers method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__sub__">__sub__() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.SignatureMeta.__subclasscheck__">__subclasscheck__() (amaranth.lib.wiring.SignatureMeta method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.__xor__">__xor__() (amaranth.hdl.Value method)</a>
+
+      <ul>
+        <li><a href="stdlib/enum.html#amaranth.lib.enum.FlagView.__xor__">(amaranth.lib.enum.FlagView method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -154,6 +294,15 @@
 </li>
       <li><a href="stdlib/crc.html#amaranth.lib.crc.Algorithm">Algorithm (class in amaranth.lib.crc)</a>
 </li>
+      <li><a href="reference.html#amaranth.hdl.Value.all">all() (amaranth.hdl.Value method)</a>
+</li>
+      <li>
+    amaranth.hdl
+
+      <ul>
+        <li><a href="reference.html#module-amaranth.hdl">module</a>
+</li>
+      </ul></li>
       <li>
     amaranth.lib.cdc
 
@@ -189,8 +338,6 @@
         <li><a href="stdlib/data.html#module-amaranth.lib.data">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     amaranth.lib.enum
 
@@ -198,6 +345,8 @@
         <li><a href="stdlib/enum.html#module-amaranth.lib.enum">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     amaranth.lib.fifo
 
@@ -205,17 +354,36 @@
         <li><a href="stdlib/fifo.html#module-amaranth.lib.fifo">module</a>
 </li>
       </ul></li>
-      <li><a href="stdlib/data.html#amaranth.lib.data.ArrayLayout">ArrayLayout (class in amaranth.lib.data)</a>
-</li>
-      <li><a href="stdlib/data.html#amaranth.lib.data.Layout.as_shape">as_shape() (amaranth.lib.data.Layout method)</a>
+      <li>
+    amaranth.lib.wiring
 
       <ul>
+        <li><a href="stdlib/wiring.html#module-amaranth.lib.wiring">module</a>
+</li>
+      </ul></li>
+      <li><a href="reference.html#amaranth.hdl.Value.any">any() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Member.array">array() (amaranth.lib.wiring.Member method)</a>
+</li>
+      <li><a href="stdlib/data.html#amaranth.lib.data.ArrayLayout">ArrayLayout (class in amaranth.lib.data)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.ShapeCastable.as_shape">as_shape() (amaranth.hdl.ShapeCastable method)</a>
+
+      <ul>
+        <li><a href="stdlib/data.html#amaranth.lib.data.Layout.as_shape">(amaranth.lib.data.Layout method)</a>
+</li>
         <li><a href="stdlib/enum.html#amaranth.lib.enum.EnumMeta.as_shape">(amaranth.lib.enum.EnumMeta method)</a>
 </li>
       </ul></li>
-      <li><a href="stdlib/data.html#amaranth.lib.data.View.as_value">as_value() (amaranth.lib.data.View method)</a>
+      <li><a href="reference.html#amaranth.hdl.Value.as_signed">as_signed() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.as_unsigned">as_unsigned() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.ValueCastable.as_value">as_value() (amaranth.hdl.ValueCastable method)</a>
 
       <ul>
+        <li><a href="stdlib/data.html#amaranth.lib.data.View.as_value">(amaranth.lib.data.View method)</a>
+</li>
         <li><a href="stdlib/enum.html#amaranth.lib.enum.EnumView.as_value">(amaranth.lib.enum.EnumView method)</a>
 </li>
       </ul></li>
@@ -228,17 +396,45 @@
   </ul></td>
 </tr></table>
 
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference.html#amaranth.hdl.Value.bit_select">bit_select() (amaranth.hdl.Value method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference.html#amaranth.hdl.Value.bool">bool() (amaranth.hdl.Value method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="stdlib/data.html#amaranth.lib.data.Layout.cast">cast() (amaranth.lib.data.Layout static method)</a>
+      <li><a href="reference.html#amaranth.hdl.Shape.cast">cast() (amaranth.hdl.Shape static method)</a>
+
+      <ul>
+        <li><a href="reference.html#amaranth.hdl.Value.cast">(amaranth.hdl.Value static method)</a>
+</li>
+        <li><a href="stdlib/data.html#amaranth.lib.data.Layout.cast">(amaranth.lib.data.Layout static method)</a>
+</li>
+      </ul></li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Component">Component (class in amaranth.lib.wiring)</a>
 </li>
       <li><a href="stdlib/crc.html#amaranth.lib.crc.Parameters.compute">compute() (amaranth.lib.crc.Parameters method)</a>
 </li>
-      <li><a href="stdlib/data.html#amaranth.lib.data.Layout.const">const() (amaranth.lib.data.Layout method)</a>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.connect">connect() (in module amaranth.lib.wiring)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.ConnectionError">ConnectionError</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.ShapeCastable.const">const() (amaranth.hdl.ShapeCastable method)</a>
 
       <ul>
+        <li><a href="stdlib/data.html#amaranth.lib.data.Layout.const">(amaranth.lib.data.Layout method)</a>
+</li>
         <li><a href="stdlib/data.html#amaranth.lib.data.UnionLayout.const">(amaranth.lib.data.UnionLayout method)</a>
+</li>
+        <li><a href="stdlib/enum.html#amaranth.lib.enum.EnumMeta.const">(amaranth.lib.enum.EnumMeta method)</a>
 </li>
       </ul></li>
       <li><a href="stdlib/crc/catalog.html#amaranth.lib.crc.catalog.CRC10_ATM">CRC10_ATM (in module amaranth.lib.crc.catalog)</a>
@@ -389,14 +585,14 @@
 </li>
       <li><a href="stdlib/crc/catalog.html#amaranth.lib.crc.catalog.CRC24_FLEXRAY_A">CRC24_FLEXRAY_A (in module amaranth.lib.crc.catalog)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="stdlib/crc/catalog.html#amaranth.lib.crc.catalog.CRC24_FLEXRAY_B">CRC24_FLEXRAY_B (in module amaranth.lib.crc.catalog)</a>
 </li>
       <li><a href="stdlib/crc/catalog.html#amaranth.lib.crc.catalog.CRC24_INTERLAKEN">CRC24_INTERLAKEN (in module amaranth.lib.crc.catalog)</a>
 </li>
       <li><a href="stdlib/crc/catalog.html#amaranth.lib.crc.catalog.CRC24_LTE_A">CRC24_LTE_A (in module amaranth.lib.crc.catalog)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="stdlib/crc/catalog.html#amaranth.lib.crc.catalog.CRC24_LTE_B">CRC24_LTE_B (in module amaranth.lib.crc.catalog)</a>
 </li>
       <li><a href="stdlib/crc/catalog.html#amaranth.lib.crc.catalog.CRC24_OPENPGP">CRC24_OPENPGP (in module amaranth.lib.crc.catalog)</a>
@@ -558,7 +754,13 @@
       <li><a href="stdlib/crc/catalog.html#amaranth.lib.crc.catalog.CRC8_WCDMA">CRC8_WCDMA (in module amaranth.lib.crc.catalog)</a>
 </li>
       <li><a href="stdlib/crc.html#amaranth.lib.crc.Parameters.create">create() (amaranth.lib.crc.Parameters method)</a>
+
+      <ul>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Signature.create">(amaranth.lib.wiring.Signature method)</a>
 </li>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.SignatureMembers.create">(amaranth.lib.wiring.SignatureMembers method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
@@ -566,6 +768,10 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="stdlib/coding.html#amaranth.lib.coding.Decoder">Decoder (class in amaranth.lib.coding)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Member.dimensions">dimensions (amaranth.lib.wiring.Member property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -583,9 +789,11 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="stdlib/enum.html#amaranth.lib.enum.EnumView">EnumView (class in amaranth.lib.enum)</a>
 </li>
-      <li><a href="stdlib/data.html#amaranth.lib.data.View.eq">eq() (amaranth.lib.data.View method)</a>
+      <li><a href="reference.html#amaranth.hdl.Value.eq">eq() (amaranth.hdl.Value method)</a>
 
       <ul>
+        <li><a href="stdlib/data.html#amaranth.lib.data.View.eq">(amaranth.lib.data.View method)</a>
+</li>
         <li><a href="stdlib/enum.html#amaranth.lib.enum.EnumView.eq">(amaranth.lib.enum.EnumView method)</a>
 </li>
       </ul></li>
@@ -601,13 +809,45 @@
 </li>
       <li><a href="stdlib/fifo.html#amaranth.lib.fifo.FIFOInterface">FIFOInterface (class in amaranth.lib.fifo)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="stdlib/enum.html#amaranth.lib.enum.Flag">Flag (class in amaranth.lib.enum)</a>
 </li>
       <li><a href="stdlib/enum.html#amaranth.lib.enum.FlagView">FlagView (class in amaranth.lib.enum)</a>
 </li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Signature.flatten">flatten() (amaranth.lib.wiring.Signature method)</a>
+
+      <ul>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.SignatureMembers.flatten">(amaranth.lib.wiring.SignatureMembers method)</a>
+</li>
+      </ul></li>
       <li><a href="stdlib/data.html#amaranth.lib.data.FlexibleLayout">FlexibleLayout (class in amaranth.lib.data)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.FlippedSignature.flip">flip() (amaranth.lib.wiring.FlippedSignature method)</a>
+
+      <ul>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.FlippedSignatureMembers.flip">(amaranth.lib.wiring.FlippedSignatureMembers method)</a>
+</li>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Flow.flip">(amaranth.lib.wiring.Flow method)</a>
+</li>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Member.flip">(amaranth.lib.wiring.Member method)</a>
+</li>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Signature.flip">(amaranth.lib.wiring.Signature method)</a>
+</li>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.SignatureMembers.flip">(amaranth.lib.wiring.SignatureMembers method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.flipped">flipped() (in module amaranth.lib.wiring)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.FlippedInterface">FlippedInterface (class in amaranth.lib.wiring)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.FlippedSignature">FlippedSignature (class in amaranth.lib.wiring)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.FlippedSignatureMembers">FlippedSignatureMembers (class in amaranth.lib.wiring)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Member.flow">flow (amaranth.lib.wiring.Member property)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Flow">Flow (class in amaranth.lib.wiring)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -629,6 +869,14 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Flow.In">In (amaranth.lib.wiring.Flow attribute)</a>
+
+      <ul>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.In">(in module amaranth.lib.wiring)</a>
+</li>
+      </ul></li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Member.init">init (amaranth.lib.wiring.Member property)</a>
+</li>
       <li><a href="platform/intel.html#amaranth.vendor.IntelPlatform">IntelPlatform (class in amaranth.vendor)</a>
 </li>
   </ul></td>
@@ -636,6 +884,12 @@
       <li><a href="stdlib/enum.html#amaranth.lib.enum.IntEnum">IntEnum (class in amaranth.lib.enum)</a>
 </li>
       <li><a href="stdlib/enum.html#amaranth.lib.enum.IntFlag">IntFlag (class in amaranth.lib.enum)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Signature.is_compliant">is_compliant() (amaranth.lib.wiring.Signature method)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Member.is_port">is_port (amaranth.lib.wiring.Member property)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Member.is_signature">is_signature (amaranth.lib.wiring.Member property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -663,10 +917,18 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference.html#amaranth.hdl.Value.matches">matches() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Member">Member (class in amaranth.lib.wiring)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Signature.members">members (amaranth.lib.wiring.Signature property)</a>
+</li>
       <li>
     module
 
       <ul>
+        <li><a href="reference.html#module-amaranth.hdl">amaranth.hdl</a>
+</li>
         <li><a href="stdlib/cdc.html#module-amaranth.lib.cdc">amaranth.lib.cdc</a>
 </li>
         <li><a href="stdlib/coding.html#module-amaranth.lib.coding">amaranth.lib.coding</a>
@@ -681,6 +943,20 @@
 </li>
         <li><a href="stdlib/fifo.html#module-amaranth.lib.fifo">amaranth.lib.fifo</a>
 </li>
+        <li><a href="stdlib/wiring.html#module-amaranth.lib.wiring">amaranth.lib.wiring</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Flow.Out">Out (amaranth.lib.wiring.Flow attribute)</a>
+
+      <ul>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Out">(in module amaranth.lib.wiring)</a>
+</li>
       </ul></li>
   </ul></td>
 </tr></table>
@@ -692,13 +968,15 @@
 </li>
       <li><a href="stdlib/coding.html#amaranth.lib.coding.PriorityDecoder">PriorityDecoder (class in amaranth.lib.coding)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="stdlib/coding.html#amaranth.lib.coding.PriorityEncoder">PriorityEncoder (class in amaranth.lib.coding)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="stdlib/crc.html#amaranth.lib.crc.Processor">Processor (class in amaranth.lib.crc)</a>
 </li>
       <li><a href="stdlib/cdc.html#amaranth.lib.cdc.PulseSynchronizer">PulseSynchronizer (class in amaranth.lib.cdc)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.PureInterface">PureInterface (class in amaranth.lib.wiring)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -714,11 +992,17 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference.html#amaranth.hdl.Value.replicate">replicate() (amaranth.hdl.Value method)</a>
+</li>
       <li><a href="stdlib/cdc.html#amaranth.lib.cdc.ResetSynchronizer">ResetSynchronizer (class in amaranth.lib.cdc)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="stdlib/crc.html#amaranth.lib.crc.Parameters.residue">residue() (amaranth.lib.crc.Parameters method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.rotate_left">rotate_left() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.rotate_right">rotate_right() (amaranth.hdl.Value method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -726,12 +1010,48 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="stdlib/data.html#amaranth.lib.data.View.shape">shape() (amaranth.lib.data.View method)</a>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Member.shape">shape (amaranth.lib.wiring.Member property)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Shape">Shape (class in amaranth.hdl)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.shape">shape() (amaranth.hdl.Value method)</a>
 
       <ul>
+        <li><a href="reference.html#amaranth.hdl.ValueCastable.shape">(amaranth.hdl.ValueCastable method)</a>
+</li>
+        <li><a href="stdlib/data.html#amaranth.lib.data.View.shape">(amaranth.lib.data.View method)</a>
+</li>
         <li><a href="stdlib/enum.html#amaranth.lib.enum.EnumView.shape">(amaranth.lib.enum.EnumView method)</a>
 </li>
       </ul></li>
+      <li><a href="reference.html#amaranth.hdl.ShapeCastable">ShapeCastable (class in amaranth.hdl)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.ShapeLike">ShapeLike (class in amaranth.hdl)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.shift_left">shift_left() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.Value.shift_right">shift_right() (amaranth.hdl.Value method)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Component.signature">signature (amaranth.lib.wiring.Component property)</a>
+
+      <ul>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.FlippedInterface.signature">(amaranth.lib.wiring.FlippedInterface property)</a>
+</li>
+        <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Member.signature">(amaranth.lib.wiring.Member property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.Signature">Signature (class in amaranth.lib.wiring)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.SignatureError">SignatureError</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.SignatureMembers">SignatureMembers (class in amaranth.lib.wiring)</a>
+</li>
+      <li><a href="stdlib/wiring.html#amaranth.lib.wiring.SignatureMeta">SignatureMeta (class in amaranth.lib.wiring)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.signed">signed() (in module amaranth.hdl)</a>
+</li>
       <li><a href="stdlib/data.html#amaranth.lib.data.ArrayLayout.size">size (amaranth.lib.data.ArrayLayout property)</a>
 
       <ul>
@@ -742,8 +1062,6 @@
         <li><a href="stdlib/data.html#amaranth.lib.data.UnionLayout.size">(amaranth.lib.data.UnionLayout property)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="stdlib/data.html#amaranth.lib.data.Struct">Struct (class in amaranth.lib.data)</a>
 </li>
       <li><a href="stdlib/data.html#amaranth.lib.data.StructLayout">StructLayout (class in amaranth.lib.data)</a>
@@ -764,12 +1082,22 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="stdlib/data.html#amaranth.lib.data.UnionLayout">UnionLayout (class in amaranth.lib.data)</a>
 </li>
+      <li><a href="reference.html#amaranth.hdl.unsigned">unsigned() (in module amaranth.hdl)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference.html#amaranth.hdl.Value">Value (class in amaranth.hdl)</a>
+</li>
+      <li><a href="reference.html#amaranth.hdl.ValueCastable">ValueCastable (class in amaranth.hdl)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference.html#amaranth.hdl.ValueLike">ValueLike (class in amaranth.hdl)</a>
+</li>
       <li><a href="stdlib/data.html#amaranth.lib.data.View">View (class in amaranth.lib.data)</a>
 </li>
   </ul></td>
@@ -781,12 +1109,20 @@
       <li><a href="stdlib/data.html#amaranth.lib.data.Field.width">width (amaranth.lib.data.Field property)</a>
 </li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference.html#amaranth.hdl.Value.word_select">word_select() (amaranth.hdl.Value method)</a>
+</li>
+  </ul></td>
 </tr></table>
 
 <h2 id="X">X</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="platform/xilinx.html#amaranth.vendor.XilinxPlatform">XilinxPlatform (class in amaranth.vendor)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="reference.html#amaranth.hdl.Value.xor">xor() (amaranth.hdl.Value method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -800,7 +1136,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020—2023, Amaranth HDL developers.</p>
+    <p>&#169; Copyright 2020—2024, Amaranth project contributors.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

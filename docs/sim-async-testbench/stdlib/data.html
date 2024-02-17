@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data structures &mdash; Amaranth HDL toolchain 0.4.dev265 documentation</title>
+  <title>Data structures &mdash; Amaranth language &amp; toolchain 0.4.1.dev117 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/platformpicker.css" type="text/css" />
@@ -15,14 +15,14 @@
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=56a01270"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=09d59d1e"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="../_static/platformpicker.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Code conversion" href="coding.html" />
+    <link rel="next" title="Interfaces and connections" href="wiring.html" />
     <link rel="prev" title="Enumerations" href="enum.html" /> 
 </head>
 
@@ -35,10 +35,11 @@
           
           
           <a href="../cover.html" class="icon icon-home">
-            Amaranth HDL toolchain
+            Amaranth language & toolchain
+              <img src="../_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.4.dev265+g7da0601.editable
+                0.4.1.dev117+g5bef5c4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -54,7 +55,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../install.html">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../start.html">Getting started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lang.html">Language guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide.html">Language guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference.html">Language reference</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../stdlib.html">Standard library</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="enum.html">Enumerations</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Data structures</a><ul>
@@ -65,10 +67,11 @@
 <li class="toctree-l4"><a class="reference internal" href="#data-classes">Data classes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="coding.html">Code conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wiring.html">Interfaces and connections</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cdc.html">Clock domain crossing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="crc.html">Cyclic redundancy checks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="coding.html">Code conversion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="fifo.html">First-in first-out queues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crc.html">Cyclic redundancy checks</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../platform.html">Platform integration</a></li>
@@ -76,7 +79,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../contrib.html">Contributing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="https://amaranth-lang.org/docs/amaranth-boards/latest/">Board definitions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://amaranth-lang.org/docs/amaranth-stdio/latest/">Standard I/O components</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://amaranth-lang.org/docs/amaranth-soc/latest/">System on Chip toolkit</a></li>
 </ul>
 
         </div>
@@ -85,7 +89,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../cover.html">Amaranth HDL toolchain</a>
+          <a href="../cover.html">Amaranth language & toolchain</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -119,6 +123,10 @@
 <li><p>Data views via <a class="reference internal" href="#amaranth.lib.data.View" title="amaranth.lib.data.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></a> or its user-defined subclasses. This class is used to apply a layout description to a plain <code class="xref py py-class docutils literal notranslate"><span class="pre">Value</span></code>, enabling structured access to its bits.</p></li>
 <li><p>Data classes <a class="reference internal" href="#amaranth.lib.data.Struct" title="amaranth.lib.data.Struct"><code class="xref py py-class docutils literal notranslate"><span class="pre">Struct</span></code></a> and <a class="reference internal" href="#amaranth.lib.data.Union" title="amaranth.lib.data.Union"><code class="xref py py-class docutils literal notranslate"><span class="pre">Union</span></code></a>. These classes are data views with a layout that is defined using Python <a class="reference external" href="https://docs.python.org/3/glossary.html#term-variable-annotation" title="(in Python v3.12)"><span class="xref std std-term">variable annotations</span></a> (also known as type annotations).</p></li>
 </ol>
+<p>To use this module, add the following imports to the beginning of the file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">amaranth.lib</span> <span class="kn">import</span> <span class="n">data</span>
+</pre></div>
+</div>
 </section>
 <section id="motivation">
 <h3>Motivation<a class="headerlink" href="#motivation" title="Permalink to this heading"></a></h3>
@@ -146,14 +154,14 @@
 <span class="n">m</span><span class="o">.</span><span class="n">d</span><span class="o">.</span><span class="n">comb</span> <span class="o">+=</span> <span class="n">o_gray</span><span class="o">.</span><span class="n">eq</span><span class="p">((</span><span class="n">i_color</span><span class="o">.</span><span class="n">red</span> <span class="o">+</span> <span class="n">i_color</span><span class="o">.</span><span class="n">green</span> <span class="o">+</span> <span class="n">i_color</span><span class="o">.</span><span class="n">blue</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The <a class="reference internal" href="#amaranth.lib.data.View" title="amaranth.lib.data.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></a> is <a class="reference internal" href="../lang.html#lang-valuecasting"><span class="std std-ref">value-castable</span></a> and can be used anywhere a plain value can be used. For example, it can be assigned to in the usual way:</p>
+<p>The <a class="reference internal" href="#amaranth.lib.data.View" title="amaranth.lib.data.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></a> is <a class="reference internal" href="../guide.html#lang-valuelike"><span class="std std-ref">value-like</span></a> and can be used anywhere a plain value can be used. For example, it can be assigned to in the usual way:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">d</span><span class="o">.</span><span class="n">comb</span> <span class="o">+=</span> <span class="n">i_color</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># everything is black</span>
 </pre></div>
 </div>
 </section>
 <section id="composing-layouts">
 <h3>Composing layouts<a class="headerlink" href="#composing-layouts" title="Permalink to this heading"></a></h3>
-<p>Layouts are composable: a <a class="reference internal" href="#amaranth.lib.data.Layout" title="amaranth.lib.data.Layout"><code class="xref py py-class docutils literal notranslate"><span class="pre">Layout</span></code></a> is a <a class="reference internal" href="../lang.html#lang-shapes"><span class="std std-ref">shape</span></a> and can be used as a part of another layout. In this case, an attribute access through a view returns a view as well.</p>
+<p>Layouts are composable: a <a class="reference internal" href="#amaranth.lib.data.Layout" title="amaranth.lib.data.Layout"><code class="xref py py-class docutils literal notranslate"><span class="pre">Layout</span></code></a> is a <a class="reference internal" href="../guide.html#lang-shapes"><span class="std std-ref">shape</span></a> and can be used as a part of another layout. In this case, an attribute access through a view returns a view as well.</p>
 <p>For example, consider a module that processes RGB pixels in groups of up to four at a time, provided by another module, and accumulates their average intensity:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">input_layout</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">StructLayout</span><span class="p">({</span>
     <span class="s2">&quot;pixels&quot;</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">ArrayLayout</span><span class="p">(</span><span class="n">rgb565_layout</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
@@ -206,7 +214,7 @@
         <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">red</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">green</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">blue</span><span class="p">)[</span><span class="o">-</span><span class="mi">8</span><span class="p">:]</span>
 </pre></div>
 </div>
-<p>Here, the <code class="docutils literal notranslate"><span class="pre">RGBLayout</span></code> class itself is <a class="reference internal" href="../lang.html#lang-shapecasting"><span class="std std-ref">shape-castable</span></a> and can be used anywhere a shape is accepted. When a <code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code> is constructed with this layout, the returned value is wrapped in an <code class="docutils literal notranslate"><span class="pre">RGBView</span></code>:</p>
+<p>Here, the <code class="docutils literal notranslate"><span class="pre">RGBLayout</span></code> class itself is <a class="reference internal" href="../guide.html#lang-shapelike"><span class="std std-ref">shape-like</span></a> and can be used anywhere a shape is accepted. When a <code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code> is constructed with this layout, the returned value is wrapped in an <code class="docutils literal notranslate"><span class="pre">RGBView</span></code>:</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pixel</span> <span class="o">=</span> <span class="n">Signal</span><span class="p">(</span><span class="n">RGBLayout</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">pixel</span><span class="o">.</span><span class="n">as_value</span><span class="p">())</span>
 <span class="go">16</span>
@@ -282,7 +290,7 @@ an Amaranth value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Variables<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>shape</strong> (<a class="reference internal" href="../lang.html#lang-shapecasting"><span class="std std-ref">shape-castable</span></a>) – Shape of the field. When initialized or assigned, the object is stored as-is.</p></li>
+<li><p><strong>shape</strong> (<a class="reference internal" href="../guide.html#lang-shapelike"><span class="std std-ref">shape-like</span></a>) – Shape of the field. When initialized or assigned, the object is stored as-is.</p></li>
 <li><p><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>, &gt;=0) – Index of the least significant bit of the field.</p></li>
 </ul>
 </dd>
@@ -292,7 +300,7 @@ an Amaranth value.</p>
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#amaranth.lib.data.Field.width" title="Permalink to this definition"></a></dt>
 <dd><p>Width of the field.</p>
 <p>This property should be used over <code class="docutils literal notranslate"><span class="pre">self.shape.width</span></code> because <code class="docutils literal notranslate"><span class="pre">self.shape</span></code> can be
-an arbitrary <a class="reference internal" href="../lang.html#lang-shapecasting"><span class="std std-ref">shape-castable</span></a> object, which may not have
+an arbitrary <a class="reference internal" href="../guide.html#lang-shapelike"><span class="std std-ref">shape-like</span></a> object, which may not have
 a <code class="docutils literal notranslate"><span class="pre">width</span></code> property.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -315,9 +323,9 @@ a <code class="docutils literal notranslate"><span class="pre">width</span></cod
 
 <dl class="py class">
 <dt class="sig sig-object py" id="amaranth.lib.data.Layout">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">amaranth.lib.data.</span></span><span class="sig-name descname"><span class="pre">Layout</span></span><a class="headerlink" href="#amaranth.lib.data.Layout" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">amaranth.lib.data.</span></span><span class="sig-name descname"><span class="pre">Layout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#amaranth.lib.data.Layout" title="Permalink to this definition"></a></dt>
 <dd><p>Description of a data layout.</p>
-<p>The <a class="reference internal" href="../lang.html#lang-shapecasting"><span class="std std-ref">shape-castable</span></a> <a class="reference internal" href="#amaranth.lib.data.Layout" title="amaranth.lib.data.Layout"><code class="xref py py-class docutils literal notranslate"><span class="pre">Layout</span></code></a> interface associates keys
+<p>The <a class="reference internal" href="../guide.html#lang-shapelike"><span class="std std-ref">shape-like</span></a> <a class="reference internal" href="#amaranth.lib.data.Layout" title="amaranth.lib.data.Layout"><code class="xref py py-class docutils literal notranslate"><span class="pre">Layout</span></code></a> interface associates keys
 (string names or integer indexes) with fields, giving identifiers to spans of bits in
 an Amaranth value.</p>
 <p>It is an abstract base class; <a class="reference internal" href="#amaranth.lib.data.StructLayout" title="amaranth.lib.data.StructLayout"><code class="xref py py-class docutils literal notranslate"><span class="pre">StructLayout</span></code></a>, <a class="reference internal" href="#amaranth.lib.data.UnionLayout" title="amaranth.lib.data.UnionLayout"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnionLayout</span></code></a>,
@@ -328,7 +336,7 @@ New layout rules can be defined by inheriting from this class.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="amaranth.lib.data.Layout.cast">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#amaranth.lib.data.Layout.cast" title="Permalink to this definition"></a></dt>
-<dd><p>Cast a <a class="reference internal" href="../lang.html#lang-shapecasting"><span class="std std-ref">shape-castable</span></a> object to a layout.</p>
+<dd><p>Cast a <a class="reference internal" href="../guide.html#lang-shapelike"><span class="std std-ref">shape-like</span></a> object to a layout.</p>
 <p>This method performs a subset of the operations done by <code class="xref py py-meth docutils literal notranslate"><span class="pre">Shape.cast()</span></code>; it will
 recursively call <code class="docutils literal notranslate"><span class="pre">.as_shape()</span></code>, but only until a layout is returned.</p>
 <dl class="field-list simple">
@@ -470,7 +478,7 @@ won’t be accessible as attributes or by using indexing.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Variables<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>members</strong> (mapping of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> to <a class="reference internal" href="../lang.html#lang-shapecasting"><span class="std std-ref">shape-castable</span></a>) – Dictionary of structure members.</p>
+<dd class="field-odd"><p><strong>members</strong> (mapping of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> to <a class="reference internal" href="../guide.html#lang-shapelike"><span class="std std-ref">shape-like</span></a>) – Dictionary of structure members.</p>
 </dd>
 </dl>
 <dl class="py property">
@@ -507,7 +515,7 @@ of the largest of its members.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Variables<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>members</strong> (mapping of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> to <a class="reference internal" href="../lang.html#lang-shapecasting"><span class="std std-ref">shape-castable</span></a>) – Dictionary of union members.</p>
+<dd class="field-odd"><p><strong>members</strong> (mapping of <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> to <a class="reference internal" href="../guide.html#lang-shapelike"><span class="std std-ref">shape-like</span></a>) – Dictionary of union members.</p>
 </dd>
 </dl>
 <dl class="py property">
@@ -562,7 +570,7 @@ layout is the size of its element multiplied by its length.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Variables<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>elem_shape</strong> (<a class="reference internal" href="../lang.html#lang-shapecasting"><span class="std std-ref">shape-castable</span></a>) – Shape of an individual element.</p></li>
+<li><p><strong>elem_shape</strong> (<a class="reference internal" href="../guide.html#lang-shapelike"><span class="std std-ref">shape-like</span></a>) – Shape of an individual element.</p></li>
 <li><p><strong>length</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>) – Amount of elements.</p></li>
 </ul>
 </dd>
@@ -623,7 +631,7 @@ consider instead inheriting from the base <a class="reference internal" href="#a
 <dt class="sig sig-object py" id="amaranth.lib.data.View">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">amaranth.lib.data.</span></span><span class="sig-name descname"><span class="pre">View</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#amaranth.lib.data.View" title="Permalink to this definition"></a></dt>
 <dd><p>A value viewed through the lens of a layout.</p>
-<p>The <a class="reference internal" href="../lang.html#lang-valuecasting"><span class="std std-ref">value-castable</span></a> class <a class="reference internal" href="#amaranth.lib.data.View" title="amaranth.lib.data.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></a> provides access to the fields
+<p>The <a class="reference internal" href="../guide.html#lang-valuelike"><span class="std std-ref">value-like</span></a> class <a class="reference internal" href="#amaranth.lib.data.View" title="amaranth.lib.data.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></a> provides access to the fields
 of an underlying Amaranth value via the names or indexes defined in the provided layout.</p>
 <section id="creating-a-view">
 <h3>Creating a view<a class="headerlink" href="#creating-a-view" title="Permalink to this heading"></a></h3>
@@ -636,7 +644,7 @@ corresponding to the field with that index or name, which is itself either a val
 a value-castable object. If the shape of the field is a <a class="reference internal" href="#amaranth.lib.data.Layout" title="amaranth.lib.data.Layout"><code class="xref py py-class docutils literal notranslate"><span class="pre">Layout</span></code></a>, it will be
 a <a class="reference internal" href="#amaranth.lib.data.View" title="amaranth.lib.data.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></a>; if it is a class deriving from <a class="reference internal" href="#amaranth.lib.data.Struct" title="amaranth.lib.data.Struct"><code class="xref py py-class docutils literal notranslate"><span class="pre">Struct</span></code></a> or <a class="reference internal" href="#amaranth.lib.data.Union" title="amaranth.lib.data.Union"><code class="xref py py-class docutils literal notranslate"><span class="pre">Union</span></code></a>, it
 will be an instance of that data class; if it is another
-<a class="reference internal" href="../lang.html#lang-shapecasting"><span class="std std-ref">shape-castable</span></a> object implementing <code class="docutils literal notranslate"><span class="pre">__call__</span></code>, it will be
+<a class="reference internal" href="../guide.html#lang-shapelike"><span class="std std-ref">shape-like</span></a> object implementing <code class="docutils literal notranslate"><span class="pre">__call__</span></code>, it will be
 the result of calling that method.</p>
 <p>Slicing a view whose layout is an <a class="reference internal" href="#amaranth.lib.data.ArrayLayout" title="amaranth.lib.data.ArrayLayout"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArrayLayout</span></code></a> can be done with an index that is
 an Amaranth value instead of a constant integer. The returned element is chosen dynamically
@@ -749,11 +757,11 @@ returns an unspecified Amaranth expression with the right shape.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">amaranth.lib.data.</span></span><span class="sig-name descname"><span class="pre">Struct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#amaranth.lib.data.Struct" title="Permalink to this definition"></a></dt>
 <dd><p>Structures defined with annotations.</p>
 <p>The <a class="reference internal" href="#amaranth.lib.data.Struct" title="amaranth.lib.data.Struct"><code class="xref py py-class docutils literal notranslate"><span class="pre">Struct</span></code></a> base class is a subclass of <a class="reference internal" href="#amaranth.lib.data.View" title="amaranth.lib.data.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></a> that provides a concise way
-to describe the structure layout and reset values for the fields using Python
+to describe the structure layout and initial values for the fields using Python
 <a class="reference external" href="https://docs.python.org/3/glossary.html#term-variable-annotation" title="(in Python v3.12)"><span class="xref std std-term">variable annotations</span></a>.</p>
-<p>Any annotations containing <a class="reference internal" href="../lang.html#lang-shapecasting"><span class="std std-ref">shape-castable</span></a> objects are used,
+<p>Any annotations containing <a class="reference internal" href="../guide.html#lang-shapelike"><span class="std std-ref">shape-like</span></a> objects are used,
 in the order in which they appear in the source code, to construct a <a class="reference internal" href="#amaranth.lib.data.StructLayout" title="amaranth.lib.data.StructLayout"><code class="xref py py-class docutils literal notranslate"><span class="pre">StructLayout</span></code></a>.
-The values assigned to such annotations are used to populate the reset value of the signal
+The values assigned to such annotations are used to populate the initial value of the signal
 created by the view. Any other annotations are kept as-is.</p>
 <p>As an example, a structure for <a class="reference external" href="https://en.wikipedia.org/wiki/Single-precision_floating-point_format">IEEE 754 single-precision floating-point format</a> can be defined as:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">IEEE754Single</span><span class="p">(</span><span class="n">Struct</span><span class="p">):</span>
@@ -765,14 +773,14 @@ created by the view. Any other annotations are kept as-is.</p>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">exponent</span> <span class="o">==</span> <span class="mi">0</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">IEEE754Single</span></code> class itself can be used where a <a class="reference internal" href="../lang.html#lang-shapes"><span class="std std-ref">shape</span></a> is expected:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">IEEE754Single</span></code> class itself can be used where a <a class="reference internal" href="../guide.html#lang-shapes"><span class="std std-ref">shape</span></a> is expected:</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IEEE754Single</span><span class="o">.</span><span class="n">as_shape</span><span class="p">()</span>
 <span class="go">StructLayout({&#39;fraction&#39;: 23, &#39;exponent&#39;: 8, &#39;sign&#39;: 1})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Signal</span><span class="p">(</span><span class="n">IEEE754Single</span><span class="p">)</span><span class="o">.</span><span class="n">as_value</span><span class="p">()</span><span class="o">.</span><span class="n">width</span>
 <span class="go">32</span>
 </pre></div>
 </div>
-<p>Instances of this class can be used where <a class="reference internal" href="../lang.html#lang-values"><span class="std std-ref">values</span></a> are expected:</p>
+<p>Instances of this class can be used where <a class="reference internal" href="../guide.html#lang-values"><span class="std std-ref">values</span></a> are expected:</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">flt</span> <span class="o">=</span> <span class="n">Signal</span><span class="p">(</span><span class="n">IEEE754Single</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Signal</span><span class="p">(</span><span class="mi">32</span><span class="p">)</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">flt</span><span class="p">)</span>
 <span class="go">(eq (sig $signal) (sig flt))</span>
@@ -785,12 +793,12 @@ created by the view. Any other annotations are kept as-is.</p>
 <span class="go">(== (slice (sig flt) 23:31) (const 1&#39;d0))</span>
 </pre></div>
 </div>
-<p>The reset values for individual fields can be overridden during instantiation:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">hex</span><span class="p">(</span><span class="n">Signal</span><span class="p">(</span><span class="n">IEEE754Single</span><span class="p">)</span><span class="o">.</span><span class="n">as_value</span><span class="p">()</span><span class="o">.</span><span class="n">reset</span><span class="p">)</span>
+<p>The initial values for individual fields can be overridden during instantiation:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">hex</span><span class="p">(</span><span class="n">Signal</span><span class="p">(</span><span class="n">IEEE754Single</span><span class="p">)</span><span class="o">.</span><span class="n">as_value</span><span class="p">()</span><span class="o">.</span><span class="n">init</span><span class="p">)</span>
 <span class="go">&#39;0x3f800000&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">hex</span><span class="p">(</span><span class="n">Signal</span><span class="p">(</span><span class="n">IEEE754Single</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;sign&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span><span class="o">.</span><span class="n">as_value</span><span class="p">()</span><span class="o">.</span><span class="n">reset</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hex</span><span class="p">(</span><span class="n">Signal</span><span class="p">(</span><span class="n">IEEE754Single</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;sign&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span><span class="o">.</span><span class="n">as_value</span><span class="p">()</span><span class="o">.</span><span class="n">init</span><span class="p">)</span>
 <span class="go">&#39;0xbf800000&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">hex</span><span class="p">(</span><span class="n">Signal</span><span class="p">(</span><span class="n">IEEE754Single</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;exponent&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span><span class="o">.</span><span class="n">as_value</span><span class="p">()</span><span class="o">.</span><span class="n">reset</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hex</span><span class="p">(</span><span class="n">Signal</span><span class="p">(</span><span class="n">IEEE754Single</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;exponent&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span><span class="o">.</span><span class="n">as_value</span><span class="p">()</span><span class="o">.</span><span class="n">init</span><span class="p">)</span>
 <span class="go">&#39;0x0&#39;</span>
 </pre></div>
 </div>
@@ -835,17 +843,17 @@ are that:</p>
 <p>The <a class="reference internal" href="#amaranth.lib.data.Union" title="amaranth.lib.data.Union"><code class="xref py py-class docutils literal notranslate"><span class="pre">Union</span></code></a> base class is a subclass of <a class="reference internal" href="#amaranth.lib.data.View" title="amaranth.lib.data.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></a> that provides a concise way
 to describe the union layout using Python <a class="reference external" href="https://docs.python.org/3/glossary.html#term-variable-annotation" title="(in Python v3.12)"><span class="xref std std-term">variable annotations</span></a>. It is very similar to the <a class="reference internal" href="#amaranth.lib.data.Struct" title="amaranth.lib.data.Struct"><code class="xref py py-class docutils literal notranslate"><span class="pre">Struct</span></code></a> class, except that its layout
 is a <a class="reference internal" href="#amaranth.lib.data.UnionLayout" title="amaranth.lib.data.UnionLayout"><code class="xref py py-class docutils literal notranslate"><span class="pre">UnionLayout</span></code></a>.</p>
-<p>A <a class="reference internal" href="#amaranth.lib.data.Union" title="amaranth.lib.data.Union"><code class="xref py py-class docutils literal notranslate"><span class="pre">Union</span></code></a> can have only one field with a specified reset value. If a reset value is
-explicitly provided during instantiation, it overrides the reset value specified with
+<p>A <a class="reference internal" href="#amaranth.lib.data.Union" title="amaranth.lib.data.Union"><code class="xref py py-class docutils literal notranslate"><span class="pre">Union</span></code></a> can have only one field with a specified initial value. If an initial value is
+explicitly provided during instantiation, it overrides the initial value specified with
 an annotation:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">VarInt</span><span class="p">(</span><span class="n">Union</span><span class="p">):</span>
     <span class="n">int8</span><span class="p">:</span>  <span class="mi">8</span>
     <span class="n">int16</span><span class="p">:</span> <span class="mi">16</span> <span class="o">=</span> <span class="mh">0x100</span>
 </pre></div>
 </div>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Signal</span><span class="p">(</span><span class="n">VarInt</span><span class="p">)</span><span class="o">.</span><span class="n">as_value</span><span class="p">()</span><span class="o">.</span><span class="n">reset</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Signal</span><span class="p">(</span><span class="n">VarInt</span><span class="p">)</span><span class="o">.</span><span class="n">as_value</span><span class="p">()</span><span class="o">.</span><span class="n">init</span>
 <span class="go">256</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Signal</span><span class="p">(</span><span class="n">VarInt</span><span class="p">,</span> <span class="n">reset</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;int8&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span><span class="o">.</span><span class="n">as_value</span><span class="p">()</span><span class="o">.</span><span class="n">reset</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Signal</span><span class="p">(</span><span class="n">VarInt</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;int8&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">})</span><span class="o">.</span><span class="n">as_value</span><span class="p">()</span><span class="o">.</span><span class="n">init</span>
 <span class="go">10</span>
 </pre></div>
 </div>
@@ -859,13 +867,13 @@ an annotation:</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="enum.html" class="btn btn-neutral float-left" title="Enumerations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="coding.html" class="btn btn-neutral float-right" title="Code conversion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="wiring.html" class="btn btn-neutral float-right" title="Interfaces and connections" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020—2023, Amaranth HDL developers.</p>
+    <p>&#169; Copyright 2020—2024, Amaranth project contributors.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

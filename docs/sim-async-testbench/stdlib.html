@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Standard library &mdash; Amaranth HDL toolchain 0.4.dev265 documentation</title>
+  <title>Standard library &mdash; Amaranth language &amp; toolchain 0.4.1.dev117 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/platformpicker.css" type="text/css" />
@@ -15,7 +15,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=56a01270"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=09d59d1e"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="_static/platformpicker.js"></script>
@@ -23,7 +23,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Enumerations" href="stdlib/enum.html" />
-    <link rel="prev" title="Language guide" href="lang.html" /> 
+    <link rel="prev" title="Language reference" href="reference.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -35,10 +35,11 @@
           
           
           <a href="cover.html" class="icon icon-home">
-            Amaranth HDL toolchain
+            Amaranth language & toolchain
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.4.dev265+g7da0601.editable
+                0.4.1.dev117+g5bef5c4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -54,14 +55,16 @@
 <li class="toctree-l2"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="start.html">Getting started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lang.html">Language guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide.html">Language guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html">Language reference</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Standard library</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="stdlib/enum.html">Enumerations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="stdlib/data.html">Data structures</a></li>
-<li class="toctree-l3"><a class="reference internal" href="stdlib/coding.html">Code conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stdlib/wiring.html">Interfaces and connections</a></li>
 <li class="toctree-l3"><a class="reference internal" href="stdlib/cdc.html">Clock domain crossing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="stdlib/crc.html">Cyclic redundancy checks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stdlib/coding.html">Code conversion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="stdlib/fifo.html">First-in first-out queues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="stdlib/crc.html">Cyclic redundancy checks</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="platform.html">Platform integration</a></li>
@@ -69,7 +72,8 @@
 <li class="toctree-l2"><a class="reference internal" href="contrib.html">Contributing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="https://amaranth-lang.org/docs/amaranth-boards/latest/">Board definitions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://amaranth-lang.org/docs/amaranth-stdio/latest/">Standard I/O components</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://amaranth-lang.org/docs/amaranth-soc/latest/">System on Chip toolkit</a></li>
 </ul>
 
         </div>
@@ -78,7 +82,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="cover.html">Amaranth HDL toolchain</a>
+          <a href="cover.html">Amaranth language & toolchain</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -99,10 +103,14 @@
              
   <section id="standard-library">
 <h1>Standard library<a class="headerlink" href="#standard-library" title="Permalink to this heading"></a></h1>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Write this section.</p>
-</div>
+<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">amaranth.lib</span></code> module, also known as the standard library, provides modules that falls into one of the three categories:</p>
+<ol class="arabic simple">
+<li><p>Modules that will used by essentially all idiomatic Amaranth code, and are necessary for interoperability. This includes <a class="reference internal" href="stdlib/enum.html#module-amaranth.lib.enum" title="amaranth.lib.enum"><code class="xref py py-mod docutils literal notranslate"><span class="pre">amaranth.lib.enum</span></code></a> (enumerations), <a class="reference internal" href="stdlib/data.html#module-amaranth.lib.data" title="amaranth.lib.data"><code class="xref py py-mod docutils literal notranslate"><span class="pre">amaranth.lib.data</span></code></a> (data structures), and <a class="reference internal" href="stdlib/wiring.html#module-amaranth.lib.wiring" title="amaranth.lib.wiring"><code class="xref py py-mod docutils literal notranslate"><span class="pre">amaranth.lib.wiring</span></code></a> (interfaces and components).</p></li>
+<li><p>Modules that abstract common functionality whose implementation differs between hardware platforms. This includes <a class="reference internal" href="stdlib/cdc.html#module-amaranth.lib.cdc" title="amaranth.lib.cdc"><code class="xref py py-mod docutils literal notranslate"><span class="pre">amaranth.lib.cdc</span></code></a>.</p></li>
+<li><p>Modules that have essentially one correct implementation and are of broad utility in digital designs. This includes <a class="reference internal" href="stdlib/coding.html#module-amaranth.lib.coding" title="amaranth.lib.coding"><code class="xref py py-mod docutils literal notranslate"><span class="pre">amaranth.lib.coding</span></code></a>, <a class="reference internal" href="stdlib/fifo.html#module-amaranth.lib.fifo" title="amaranth.lib.fifo"><code class="xref py py-mod docutils literal notranslate"><span class="pre">amaranth.lib.fifo</span></code></a>, and <a class="reference internal" href="stdlib/crc.html#module-amaranth.lib.crc" title="amaranth.lib.crc"><code class="xref py py-mod docutils literal notranslate"><span class="pre">amaranth.lib.crc</span></code></a>.</p></li>
+</ol>
+<p>As part of the Amaranth backwards compatibility guarantee, any behaviors described in these documents will not change from a version to another without at least one version including a warning about the impending change. Any nontrivial change to these behaviors must also go through the public review as a part of the <a class="reference external" href="https://amaranth-lang.org/rfcs/">Amaranth Request for Comments process</a>.</p>
+<p>The Amaranth standard library is separate from the Amaranth language: everything provided in it could have been implemented in a third-party library.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="stdlib/enum.html">Enumerations</a><ul>
@@ -119,10 +127,12 @@
 <li class="toctree-l2"><a class="reference internal" href="stdlib/data.html#data-classes">Data classes</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="stdlib/coding.html">Code conversion</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="stdlib/coding.html#one-hot-coding">One-hot coding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stdlib/coding.html#priority-coding">Priority coding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stdlib/coding.html#gray-coding">Gray coding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stdlib/wiring.html">Interfaces and connections</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stdlib/wiring.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdlib/wiring.html#signatures">Signatures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdlib/wiring.html#interfaces">Interfaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdlib/wiring.html#making-connections">Making connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdlib/wiring.html#components">Components</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="stdlib/cdc.html">Clock domain crossing</a><ul>
@@ -132,11 +142,10 @@
 <li class="toctree-l2"><a class="reference internal" href="stdlib/cdc.html#amaranth.lib.cdc.PulseSynchronizer"><code class="docutils literal notranslate"><span class="pre">PulseSynchronizer</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="stdlib/crc.html">Cyclic redundancy checks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="stdlib/crc.html#amaranth.lib.crc.Algorithm"><code class="docutils literal notranslate"><span class="pre">Algorithm</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="stdlib/crc.html#amaranth.lib.crc.Parameters"><code class="docutils literal notranslate"><span class="pre">Parameters</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="stdlib/crc.html#amaranth.lib.crc.Processor"><code class="docutils literal notranslate"><span class="pre">Processor</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="stdlib/crc/catalog.html">Predefined CRC Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stdlib/coding.html">Code conversion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stdlib/coding.html#one-hot-coding">One-hot coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdlib/coding.html#priority-coding">Priority coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdlib/coding.html#gray-coding">Gray coding</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="stdlib/fifo.html">First-in first-out queues</a><ul>
@@ -147,6 +156,13 @@
 <li class="toctree-l2"><a class="reference internal" href="stdlib/fifo.html#amaranth.lib.fifo.AsyncFIFOBuffered"><code class="docutils literal notranslate"><span class="pre">AsyncFIFOBuffered</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="stdlib/crc.html">Cyclic redundancy checks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="stdlib/crc.html#amaranth.lib.crc.Algorithm"><code class="docutils literal notranslate"><span class="pre">Algorithm</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdlib/crc.html#amaranth.lib.crc.Parameters"><code class="docutils literal notranslate"><span class="pre">Parameters</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdlib/crc.html#amaranth.lib.crc.Processor"><code class="docutils literal notranslate"><span class="pre">Processor</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="stdlib/crc/catalog.html">Predefined CRC Algorithms</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>
@@ -155,14 +171,14 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="lang.html" class="btn btn-neutral float-left" title="Language guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="reference.html" class="btn btn-neutral float-left" title="Language reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="stdlib/enum.html" class="btn btn-neutral float-right" title="Enumerations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020—2023, Amaranth HDL developers.</p>
+    <p>&#169; Copyright 2020—2024, Amaranth project contributors.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

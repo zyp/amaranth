@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &mdash; Amaranth HDL toolchain 0.4.dev265 documentation</title>
+  <title>Installation &mdash; Amaranth language &amp; toolchain 0.4.1.dev117 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/platformpicker.css" type="text/css" />
@@ -15,7 +15,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=56a01270"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=09d59d1e"></script>
         <script src="_static/doctools.js?v=888ff710"></script>
         <script src="_static/sphinx_highlight.js?v=4825356b"></script>
         <script src="_static/platformpicker.js"></script>
@@ -35,10 +35,11 @@
           
           
           <a href="cover.html" class="icon icon-home">
-            Amaranth HDL toolchain
+            Amaranth language & toolchain
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                0.4.dev265+g7da0601.editable
+                0.4.1.dev117+g5bef5c4
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -65,14 +66,16 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="start.html">Getting started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lang.html">Language guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide.html">Language guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html">Language reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stdlib.html">Standard library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="platform.html">Platform integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changes.html">Changelog</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contrib.html">Contributing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference external" href="https://amaranth-lang.org/docs/amaranth-boards/latest/">Board definitions</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://amaranth-lang.org/docs/amaranth-stdio/latest/">Standard I/O components</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://amaranth-lang.org/docs/amaranth-soc/latest/">System on Chip toolkit</a></li>
 </ul>
 
         </div>
@@ -81,7 +84,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="cover.html">Amaranth HDL toolchain</a>
+          <a href="cover.html">Amaranth language & toolchain</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -104,9 +107,9 @@
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h1>
 <section id="system-requirements">
 <h2>System requirements<a class="headerlink" href="#system-requirements" title="Permalink to this heading"></a></h2>
-<p>Amaranth HDL requires Python 3.8; it works on <a class="reference external" href="https://www.python.org/">CPython</a> 3.8 (or newer), and works faster on <a class="reference external" href="https://www.pypy.org/">PyPy3.8</a> 7.3.7 (or newer). Installation requires <a class="reference external" href="https://pip.pypa.io/">pip</a> 23.0 (or newer).</p>
+<p>Amaranth HDL requires Python 3.8; it works on <a class="reference external" href="https://www.python.org/">CPython</a> 3.8 (or newer), and works faster on <a class="reference external" href="https://www.pypy.org/">PyPy3.8</a> 7.3.7 (or newer). Installation requires <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a> 23.0 (or newer).</p>
 <p>For most workflows, Amaranth requires <a class="reference external" href="https://yosyshq.net/yosys/">Yosys</a> 0.35 (or newer). A compatible version of Yosys is distributed via <a class="reference external" href="https://pypi.org/">PyPI</a> for most popular platforms.</p>
-<p>Simulating Amaranth code requires no additional software. However, a waveform viewer like <a class="reference external" href="http://gtkwave.sourceforge.net/">GTKWave</a> is invaluable for debugging.</p>
+<p>Simulating Amaranth code requires no additional software. However, a waveform viewer like <a class="reference external" href="https://gtkwave.sourceforge.net/">GTKWave</a> is invaluable for debugging.</p>
 <p>Synthesizing, placing and routing an Amaranth design for an FPGA requires the FPGA family specific toolchain.</p>
 </section>
 <section id="installing-prerequisites">
@@ -116,7 +119,7 @@
 <p class="platform-title">Windows</p>
 <p><a class="reference external" href="https://docs.python.org/3/using/windows.html#using-on-windows" title="(in Python v3.12)"><span class="xref std std-ref">Install Python</span></a>, either from Windows Store or using the full installer. If using the full installer, make sure to install a 64-bit version of Python.</p>
 <p><a class="reference external" href="https://sourceforge.net/projects/gtkwave/files/">Download GTKWave</a>, either win32 or win64 binaries. GTKWave does not need to be installed; it can be unpacked to any convenient location and run from there.</p>
-<p>Before continuing, make sure you have the latest version of <a class="reference external" href="https://pip.pypa.io/">pip</a> installed by running:</p>
+<p>Before continuing, make sure you have the latest version of <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a> installed by running:</p>
 <div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> pip install --upgrade pip
 </pre></div>
 </div>
@@ -127,7 +130,7 @@
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>brew<span class="w"> </span>install<span class="w"> </span>python<span class="w"> </span>gtkwave
 </pre></div>
 </div>
-<p>Before continuing, make sure you have the latest version of <a class="reference external" href="https://pip.pypa.io/">pip</a> installed by running:</p>
+<p>Before continuing, make sure you have the latest version of <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a> installed by running:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
 </pre></div>
 </div>
@@ -142,8 +145,8 @@
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>yosys
 </pre></div>
 </div>
-<p>If Yosys 0.35 (or newer) is not available, <a class="reference external" href="https://github.com/YosysHQ/yosys/#setup">build Yosys from source</a>.</p>
-<p>Before continuing, make sure you have the latest version of <a class="reference external" href="https://pip.pypa.io/">pip</a> installed by running:</p>
+<p>If Yosys 0.35 (or newer) is not available, <a class="reference external" href="https://github.com/YosysHQ/yosys/#building-from-source">build Yosys from source</a>.</p>
+<p>Before continuing, make sure you have the latest version of <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a> installed by running:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip3<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--upgrade<span class="w"> </span>pip
 </pre></div>
 </div>
@@ -159,8 +162,8 @@
 <p class="platform-title">Other Linux</p>
 <p>Install Python and GTKWave from the package repository of your distribution.</p>
 <p>On architectures other than x86_64 and AArch64, install Yosys from the package repository of your distribution.</p>
-<p>If Yosys 0.35 (or newer) is not available, <a class="reference external" href="https://github.com/YosysHQ/yosys/#setup">build Yosys from source</a>.</p>
-<p>Before continuing, make sure you have the latest version of <a class="reference external" href="https://pip.pypa.io/">pip</a> installed by running:</p>
+<p>If Yosys 0.35 (or newer) is not available, <a class="reference external" href="https://github.com/YosysHQ/yosys/#building-from-source">build Yosys from source</a>.</p>
+<p>Before continuing, make sure you have the latest version of <a class="reference external" href="https://pip.pypa.io/en/stable/">pip</a> installed by running:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip3<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--upgrade<span class="w"> </span>pip
 </pre></div>
 </div>
@@ -312,7 +315,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2020—2023, Amaranth HDL developers.</p>
+    <p>&#169; Copyright 2020—2024, Amaranth project contributors.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
