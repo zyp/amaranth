@@ -366,11 +366,11 @@ class SimulationPort(PortLike):
 
         self._i = self._o = self._oe = None
         if self._direction in (Direction.Input, Direction.Bidir):
-            self._i  = Signal(width, name=f"{name}__i")
+            self._i  = tuple(Signal(name=f"{name}__i_{i}") for i in range(width))
         if self._direction in (Direction.Output, Direction.Bidir):
-            self._o  = Signal(width, name=f"{name}__o")
-            self._oe = Signal(width, name=f"{name}__oe",
-                              init=~0 if self._direction is Direction.Output else 0)
+            self._o  = tuple(Signal(name=f"{name}__o_{i}") for i in range(width))
+            self._oe = tuple(Signal(name=f"{name}__oe_{i}",
+                                    init=~0 if self._direction is Direction.Output else 0) for i in range(width))
 
         if isinstance(invert, bool):
             self._invert = (invert,) * width
@@ -389,21 +389,21 @@ class SimulationPort(PortLike):
         if self._i is None:
             raise AttributeError(
                 "Simulation port with output direction does not have an input signal")
-        return self._i
+        return Cat(self._i)
 
     @property
     def o(self):
         if self._o is None:
             raise AttributeError(
                 "Simulation port with input direction does not have an output signal")
-        return self._o
+        return Cat(self._o)
 
     @property
     def oe(self):
         if self._oe is None:
             raise AttributeError(
                 "Simulation port with input direction does not have an output enable signal")
-        return self._oe
+        return Cat(self._oe)
 
     @property
     def invert(self):
@@ -426,12 +426,15 @@ class SimulationPort(PortLike):
 
     def __getitem__(self, key):
         result = object.__new__(type(self))
-        result._i  = None if self._i  is None else self._i [key]
-        result._o  = None if self._o  is None else self._o [key]
-        result._oe = None if self._oe is None else self._oe[key]
         if isinstance(key, slice):
+            result._i  = None if self._i  is None else self._i [key]
+            result._o  = None if self._o  is None else self._o [key]
+            result._oe = None if self._oe is None else self._oe[key]
             result._invert = self._invert[key]
         else:
+            result._i  = None if self._i  is None else (self._i [key],)
+            result._o  = None if self._o  is None else (self._o [key],)
+            result._oe = None if self._oe is None else (self._oe[key],)
             result._invert = (self._invert[key],)
         result._direction = self._direction
         return result
@@ -450,9 +453,9 @@ class SimulationPort(PortLike):
             return NotImplemented
         direction = self._direction & other._direction
         result = object.__new__(type(self))
-        result._i  = None if direction is Direction.Output else Cat(self._i,  other._i)
-        result._o  = None if direction is Direction.Input  else Cat(self._o,  other._o)
-        result._oe = None if direction is Direction.Input  else Cat(self._oe, other._oe)
+        result._i  = None if direction is Direction.Output else self._i  + other._i
+        result._o  = None if direction is Direction.Input  else self._o  + other._o
+        result._oe = None if direction is Direction.Input  else self._oe + other._oe
         result._invert = self._invert + other._invert
         result._direction = direction
         return result
