@@ -272,7 +272,7 @@ The following code replaces the :py:`Adder` elaboratable with the equivalent Pyt
         ctx.set(b, 420)
         assert ctx.get(o) == 2137
 
-        await ctx.delay(2e-6)
+        await ctx.delay(Period(us=2))
 
     sim = Simulator(m)
     sim.add_process(process_example5)
