@@ -48,7 +48,7 @@ Simulating a design always requires the three basic steps: constructing the :abb
 
 .. testcode::
 
-    from amaranth.sim import Simulator
+    from amaranth.sim import Simulator, Period
 
     dut = Counter()
     sim = Simulator(dut)

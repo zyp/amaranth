@@ -60,7 +60,7 @@ All of the following examples assume that one of the built-in FPGA platforms is 
 
 .. testcode::
 
-    from amaranth.sim import Simulator
+    from amaranth.sim import Simulator, Period
     from amaranth.lib import io, wiring, stream
     from amaranth.lib.wiring import In, Out
 

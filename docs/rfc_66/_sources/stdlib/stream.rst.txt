@@ -59,7 +59,7 @@ The pipeline is tested using the :doc:`built-in simulator </simulator>` and the 
 
 .. testcode::
 
-    from amaranth.sim import Simulator
+    from amaranth.sim import Simulator, Period
 
     async def stream_get(ctx, stream):
         ctx.set(stream.ready, 1)
